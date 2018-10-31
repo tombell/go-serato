@@ -39,7 +39,7 @@ func TestNewRowFieldUnexpectedEOF(t *testing.T) {
 
 	_, err = field.NewRowField(hdr, buf)
 	if err != io.ErrUnexpectedEOF {
-		t.Fatal("expected NewRowField err to be ErrUnexpectedEOF")
+		t.Fatal("expected NewRowField err to be io.ErrUnexpectedEOF")
 	}
 }
 
@@ -54,7 +54,7 @@ func TestNewRowFieldUnexpectedIdentifier(t *testing.T) {
 
 	_, err = field.NewRowField(hdr, buf)
 	if err != field.ErrUnexpectedIdentifier {
-		t.Fatal("expected NewRowField err to be ErrUnexpectedIdentifier")
+		t.Fatal("expected NewRowField err to be field.ErrUnexpectedIdentifier")
 	}
 }
 
