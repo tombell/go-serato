@@ -24,7 +24,8 @@ func (f *FullPath) String() string {
 	return f.Value()
 }
 
-// NewFullPathField returns an initialised FullPath, using the given header.
+// NewFullPathField returns an initialised FullPath, using the given field
+// header.
 func NewFullPathField(header *Header, r io.Reader) (*FullPath, error) {
 	if header.Identifier != fullpathID {
 		return nil, ErrUnexpectedIdentifier
