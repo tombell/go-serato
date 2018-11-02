@@ -15,12 +15,12 @@ func TestNewFullPathField(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	fullpath, err := field.NewFullPathField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewFullPathField err to be nil")
+		t.Fatalf("expected NewFullPathField err to be nil, got %v", err)
 	}
 
 	if fullpath == nil {
@@ -34,12 +34,12 @@ func TestNewFullPathFieldUnexpectedEOF(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	_, err = field.NewFullPathField(hdr, buf)
 	if err != io.ErrUnexpectedEOF {
-		t.Fatal("expected NewFullPathField err to be io.ErrUnexpectedEOF")
+		t.Fatalf("expected NewFullPathField err to be io.ErrUnexpectedEOF, got %v", err)
 	}
 }
 
@@ -49,12 +49,12 @@ func TestNewFullPathFieldUnexpectedIdentifier(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	_, err = field.NewFullPathField(hdr, buf)
 	if err != field.ErrUnexpectedIdentifier {
-		t.Fatal("expected NewFullPathField err to be field.ErrUnexpectedIdentifier")
+		t.Fatalf("expected NewFullPathField err to be field.ErrUnexpectedIdentifier, got %v", err)
 	}
 }
 
@@ -64,12 +64,12 @@ func TestFullPathValue(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	fullpath, err := field.NewFullPathField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewFullPathField err to be nil")
+		t.Fatalf("expected NewFullPathField err to be nil, got %v", err)
 	}
 
 	actual := fullpath.Value()
@@ -86,12 +86,12 @@ func TestFullPathString(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	fullpath, err := field.NewFullPathField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewFullPathField err to be nil")
+		t.Fatalf("expected NewFullPathField err to be nil, got %v", err)
 	}
 
 	actual := fullpath.String()
