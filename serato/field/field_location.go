@@ -36,5 +36,8 @@ func NewLocationField(header *Header, r io.Reader) (*Location, error) {
 		return nil, err
 	}
 
-	return &Location{header, data[:]}, nil
+	return &Location{
+		header: header,
+		data:   data[:],
+	}, nil
 }
