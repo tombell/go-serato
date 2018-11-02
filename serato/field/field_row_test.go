@@ -15,12 +15,12 @@ func TestNewRowField(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	row, err := field.NewRowField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewRowField err to be nil")
+		t.Fatalf("expected NewRowField err to be nil, got %v", err)
 	}
 
 	if row == nil {
@@ -34,12 +34,12 @@ func TestNewRowFieldUnexpectedEOF(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	_, err = field.NewRowField(hdr, buf)
 	if err != io.ErrUnexpectedEOF {
-		t.Fatal("expected NewRowField err to be io.ErrUnexpectedEOF")
+		t.Fatal("expected NewRowField err to be io.ErrUnexpectedEOF, got %v", err)
 	}
 }
 
@@ -49,12 +49,12 @@ func TestNewRowFieldUnexpectedIdentifier(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	_, err = field.NewRowField(hdr, buf)
 	if err != field.ErrUnexpectedIdentifier {
-		t.Fatal("expected NewRowField err to be field.ErrUnexpectedIdentifier")
+		t.Fatalf("expected NewRowField err to be field.ErrUnexpectedIdentifier, got %v", err)
 	}
 }
 
@@ -64,12 +64,12 @@ func TestRowValue(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	row, err := field.NewRowField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewRowField err to be nil")
+		t.Fatalf("expected NewRowField err to be nil, got %v", err)
 	}
 
 	actual := row.Value()
@@ -86,12 +86,12 @@ func TestRowString(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	row, err := field.NewRowField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewRowField err to be nil")
+		t.Fatalf("expected NewRowField err to be nil, got %v", err)
 	}
 
 	actual := row.String()
