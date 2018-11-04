@@ -98,7 +98,7 @@ func TestField68String(t *testing.T) {
 	actual := field.String()
 	expected := "[0 0 0 0]"
 
-	if !reflect.DeepEqual(actual, expected) {
+	if actual != expected {
 		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }
