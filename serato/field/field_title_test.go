@@ -76,7 +76,7 @@ func TestTitleValue(t *testing.T) {
 	expected := "Do You Wanna House (Original Mix)"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }
 
@@ -98,6 +98,6 @@ func TestTitleString(t *testing.T) {
 	expected := "Do You Wanna House (Original Mix)"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }

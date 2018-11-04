@@ -76,7 +76,7 @@ func TestAlbumValue(t *testing.T) {
 	expected := "Glory"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }
 
@@ -98,6 +98,6 @@ func TestAlbumString(t *testing.T) {
 	expected := "Glory"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }

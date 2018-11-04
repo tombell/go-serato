@@ -76,7 +76,7 @@ func TestArtistValue(t *testing.T) {
 	expected := "DJ Favorite, DJ Kharitonov"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }
 
@@ -98,6 +98,6 @@ func TestArtistString(t *testing.T) {
 	expected := "DJ Favorite, DJ Kharitonov"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }

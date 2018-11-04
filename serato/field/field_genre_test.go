@@ -76,7 +76,7 @@ func TestGenreValue(t *testing.T) {
 	expected := "House"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }
 
@@ -98,6 +98,6 @@ func TestGenreString(t *testing.T) {
 	expected := "House"
 
 	if actual != expected {
-		t.Fatalf("expected value to be %s, got %s", expected, actual)
+		t.Fatalf("expected value to be %v, got %v", expected, actual)
 	}
 }

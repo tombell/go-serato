@@ -94,7 +94,7 @@ func TestVrsnType(t *testing.T) {
 	expected := "vrsn"
 
 	if actual != expected {
-		t.Fatalf("expected type to be %s, got %s", expected, actual)
+		t.Fatalf("expected type to be %v, got %v", expected, actual)
 	}
 }
 
@@ -116,6 +116,6 @@ func TestVrsnVersion(t *testing.T) {
 	expected := "1.0/Serato Scratch LIVE Review"
 
 	if actual != expected {
-		t.Fatalf("expected version to be %s, got %s", expected, actual)
+		t.Fatalf("expected version to be %v, got %v", expected, actual)
 	}
 }
