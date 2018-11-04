@@ -31,7 +31,6 @@ func NewLengthField(header *Header, r io.Reader) (*Length, error) {
 	}
 
 	data := make([]byte, header.Length)
-
 	if err := binary.Read(r, binary.BigEndian, &data); err != nil {
 		return nil, err
 	}
