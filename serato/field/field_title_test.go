@@ -15,12 +15,12 @@ func TestNewTitleField(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	title, err := field.NewTitleField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewTitleField err to be nil")
+		t.Fatalf("expected NewTitleField err to be nil, got %v", err)
 	}
 
 	if title == nil {
@@ -34,12 +34,12 @@ func TestNewTitleFieldUnexpectedEOF(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	_, err = field.NewTitleField(hdr, buf)
 	if err != io.ErrUnexpectedEOF {
-		t.Fatal("expected NewTitleField err to be ErrUnexpectedEOF")
+		t.Fatalf("expected NewTitleField err to be io.ErrUnexpectedEOF, got %v", err)
 	}
 }
 
@@ -49,12 +49,12 @@ func TestNewTitleFieldUnexpectedIdentifier(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	_, err = field.NewTitleField(hdr, buf)
 	if err != field.ErrUnexpectedIdentifier {
-		t.Fatal("expected NewTitleField err to be ErrUnexpectedIdentifier")
+		t.Fatalf("expected NewTitleField err to be field.ErrUnexpectedIdentifier, got %v", err)
 	}
 }
 
@@ -64,12 +64,12 @@ func TestTitleValue(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	title, err := field.NewTitleField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewTitleField err to be nil")
+		t.Fatalf("expected NewTitleField err to be nil, got %v", err)
 	}
 
 	actual := title.Value()
@@ -86,12 +86,12 @@ func TestTitleString(t *testing.T) {
 
 	hdr, err := field.NewHeader(buf)
 	if err != nil {
-		t.Fatal("expected NewHeader err to be nil")
+		t.Fatalf("expected NewHeader err to be nil, got %v", err)
 	}
 
 	title, err := field.NewTitleField(hdr, buf)
 	if err != nil {
-		t.Fatal("expected NewTitleField err to be nil")
+		t.Fatalf("expected NewTitleField err to be nil, got %v", err)
 	}
 
 	actual := title.String()
