@@ -36,5 +36,8 @@ func NewFullPathField(header *Header, r io.Reader) (*FullPath, error) {
 		return nil, err
 	}
 
-	return &FullPath{header, data[:]}, nil
+	return &FullPath{
+		header: header,
+		data:   data[:],
+	}, nil
 }

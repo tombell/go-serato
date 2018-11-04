@@ -35,5 +35,8 @@ func NewArtistField(header *Header, r io.Reader) (*Artist, error) {
 		return nil, err
 	}
 
-	return &Artist{header, data[:]}, nil
+	return &Artist{
+		header: header,
+		data:   data[:],
+	}, nil
 }

@@ -35,5 +35,8 @@ func NewAlbumField(header *Header, r io.Reader) (*Album, error) {
 		return nil, err
 	}
 
-	return &Album{header, data[:]}, nil
+	return &Album{
+		header: header,
+		data:   data[:],
+	}, nil
 }

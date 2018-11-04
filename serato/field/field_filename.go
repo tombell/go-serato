@@ -36,5 +36,8 @@ func NewFilenameField(header *Header, r io.Reader) (*Filename, error) {
 		return nil, err
 	}
 
-	return &Filename{header, data[:]}, nil
+	return &Filename{
+		header: header,
+		data:   data[:],
+	}, nil
 }

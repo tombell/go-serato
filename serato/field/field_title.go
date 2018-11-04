@@ -35,5 +35,8 @@ func NewTitleField(header *Header, r io.Reader) (*Title, error) {
 		return nil, err
 	}
 
-	return &Title{header, data[:]}, nil
+	return &Title{
+		header: header,
+		data:   data[:],
+	}, nil
 }
