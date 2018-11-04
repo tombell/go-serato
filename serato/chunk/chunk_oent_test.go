@@ -110,6 +110,6 @@ func TestOentType(t *testing.T) {
 	expected := "oent"
 
 	if actual != expected {
-		t.Fatalf("expected type to be %s, got %s", expected, actual)
+		t.Fatalf("expected type to be %v, got %v", expected, actual)
 	}
 }
