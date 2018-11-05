@@ -54,7 +54,7 @@ func TestNewUentChunkUnexpectedIdentifier(t *testing.T) {
 
 	_, err = chunk.NewUentChunk(hdr, buf)
 	if err != chunk.ErrUnexpectedIdentifier {
-		t.Fatalf("expected NewUentChunk err to be field.ErrUnexpectedIdentifier, got %v", err)
+		t.Fatalf("expected NewUentChunk err to be chunk.ErrUnexpectedIdentifier, got %v", err)
 	}
 }
 
