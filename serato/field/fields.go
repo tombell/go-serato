@@ -1,8 +1,6 @@
 package field
 
-import (
-	"bytes"
-)
+import "bytes"
 
 // Fields is a struct containing all possible fields for a single ADAT chunk.
 type Fields struct {
