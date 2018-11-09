@@ -12,7 +12,7 @@ type Fields struct {
 	Artist    *Artist
 	Album     *Album
 	Genre     *Genre
-	Length    *Length
+	Length    *Length  // Always empty as of Serato DJ Pro 2.0.5
 	Bitrate   *Bitrate // Always empty as of Serato DJ Pro 2.0.5
 	BPM       *BPM
 	Comment   *Comment
