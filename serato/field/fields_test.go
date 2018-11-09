@@ -2,20 +2,10 @@ package field_test
 
 import (
 	"encoding/hex"
-	"io/ioutil"
 	"testing"
 
 	"github.com/tombell/go-serato/serato/field"
 )
-
-func readTestDataFile(t *testing.T, filepath string) string {
-	data, err := ioutil.ReadFile(filepath)
-	if err != nil {
-		t.Fatalf("failed to read bytes from: %v (%v)", filepath, err)
-	}
-
-	return string(data)
-}
 
 // This will test all fields that Serato DJ Pro 2.0.5 will include values for.
 func TestNewFieldsKnownFields(t *testing.T) {

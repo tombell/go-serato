@@ -2,10 +2,9 @@ package field_test
 
 import (
 	"encoding/hex"
+	"io/ioutil"
 	"testing"
 )
-
-// TODO: do we need to test the constants and/or error?
 
 func generateBytes(t *testing.T, data string) []byte {
 	t.Helper()
@@ -16,4 +15,15 @@ func generateBytes(t *testing.T, data string) []byte {
 	}
 
 	return b
+}
+
+func readTestDataFile(t *testing.T, filepath string) string {
+	t.Helper()
+
+	data, err := ioutil.ReadFile(filepath)
+	if err != nil {
+		t.Fatalf("failed to read bytes from: %v (%v)", filepath, err)
+	}
+
+	return string(data)
 }
