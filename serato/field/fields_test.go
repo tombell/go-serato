@@ -18,7 +18,7 @@ func readTestDataFile(t *testing.T, filepath string) string {
 }
 
 // This will test all fields that Serato DJ Pro 2.0.5 will include values for.
-func TestNewFields(t *testing.T) {
+func TestNewFieldsKnownFields(t *testing.T) {
 	str := readTestDataFile(t, "./testdata/known-fields.txt")
 	data, _ := hex.DecodeString(str)
 
