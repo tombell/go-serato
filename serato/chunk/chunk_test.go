@@ -5,8 +5,6 @@ import (
 	"testing"
 )
 
-// TODO: do we need to test the constants and/or error?
-
 func generateBytes(t *testing.T, data string) []byte {
 	t.Helper()
 
