@@ -2,6 +2,7 @@ package field_test
 
 import (
 	"encoding/hex"
+	"fmt"
 	"io"
 	"testing"
 
@@ -189,4 +190,52 @@ func TestNewFieldsUnexpectedEOF(t *testing.T) {
 	}
 }
 
-// TODO: add tests, maybe table test that NewXXXField errors in NewFields
+func TestNewFieldsErrors(t *testing.T) {
+	tests := []struct {
+		name string
+		id   int
+	}{
+		{"row", 1},
+		{"fullpath", 2},
+		{"location", 3},
+		{"filename", 4},
+		{"title", 6},
+		{"artist", 7},
+		{"album", 8},
+		{"genre", 9},
+		{"length", 10},
+		{"bitrate", 13},
+		{"bpm", 15},
+		{"comment", 17},
+		{"grouping", 19},
+		{"remixer", 20},
+		{"label", 21},
+		{"composer", 22},
+		{"year", 23},
+		{"starttime", 28},
+		{"endtime", 29},
+		{"deck", 31},
+		{"field39", 39},
+		{"playtime", 45},
+		{"session", 48},
+		{"played", 50},
+		{"key", 51},
+		{"added", 52},
+		{"updatedAt", 53},
+		{"field68", 68},
+		{"field69", 69},
+		{"field70", 70},
+		{"field72", 72},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			data, _ := hex.DecodeString(fmt.Sprintf("%08x000000080000", tc.id))
+
+			_, err := field.NewFields(data)
+			if err == nil {
+				t.Fatalf("expected NewFields err to be io.ErrUnexpectedEOF, got %v", err)
+			}
+		})
+	}
+}
