@@ -6,4 +6,7 @@ all: test
 test:
 	go test ${MODFLAGS} ${TESTFLAGS} ./...
 
-.PHONY: all test
+testv:
+	go test ${MODFLAGS} ${TESTFLAGS} -v ./...
+
+.PHONY: all test testv
