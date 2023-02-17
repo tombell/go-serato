@@ -1,3 +1,5 @@
 module github.com/tombell/go-serato
 
-require golang.org/x/text v0.3.2
+go 1.19
+
+require golang.org/x/text v0.7.0
